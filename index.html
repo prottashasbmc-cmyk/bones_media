@@ -490,6 +490,7 @@
                     
                     {/* Floating Controls (Theme & Refresh) */}
                     <div className="floating-controls">
+                        
                         <ThemeToggleFloating />
                         <div className="group flex items-center gap-3">
                             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/80 dark:bg-white/90 text-white dark:text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl backdrop-blur-md shadow-xl pointer-events-none">
@@ -502,6 +503,27 @@
                             >
                                 <i className={`fas fa-sync-alt text-xl ${loading ? 'animate-spin' : ''}`}></i>
                             </button>
+                        </div>
+                        <div className="group flex items-center gap-3">
+                            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/80 dark:bg-white/90 text-white dark:text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl backdrop-blur-md shadow-xl pointer-events-none">
+                                Add New Bone Set
+                            </span>
+                            <button 
+  onClick={() => window.open('https://docs.google.com/forms/d/1RoNPD9wR17Eu7BLQuuYmEDG8fdIUmndAiNbEBb7YRIM/edit?pli=1', '_blank')}
+  aria-label="Add Item"
+  className="
+    w-14 h-14 sm:w-16 sm:h-16 
+    flex items-center justify-center 
+    rounded-[2rem] bg-red-600 text-white 
+    border border-red-400/30 
+    shadow-2xl shadow-red-500/30 
+    transition-all duration-200
+    hover:scale-110 
+    active:scale-95
+  "
+>
+  <i className="fa fa-plus text-2xl" aria-hidden="true"></i>
+</button>
                         </div>
                     </div>
 
