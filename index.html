@@ -137,7 +137,7 @@
 
         const INITIAL_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR0cj3DJz35_KETzh56DM3-IK7dvSgSdO45URFv3Xj4wEUlpejjE09F6iJyfejuPRPRqCOALW5RRnML/pub?output=csv";
         const FACEBOOK_URL = "https://www.facebook.com/people/Prottasha-SBMC/61584373444008/";
-        const WHATSAPP_NUMBERS = ["+8801786792502", "+88013443443104"];
+        const WHATSAPP_NUMBERS = ["+8801786792502", "+88013443443104", "+8801795589971"];
         const SBMC_LOGO_URL = "https://upload.wikimedia.org/wikipedia/en/7/75/Sher_e_Bangla_Medical_College_Logo.jpg";
         const PROTTASHA_LOGO_URL = "https://drive.google.com/thumbnail?id=1RvDdJVZrJ3-quShk5ZKF96qxaXFMpAwd&sz=w1000";
         const ITEMS_PER_PAGE = 12;
@@ -553,7 +553,7 @@
 
                                 {paginatedData.length > 0 ? (
                                     <React.Fragment>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 hover:scale-102 transition-transform duration-300">
                                             {paginatedData.map((row, idx) => {
                                                 const title = row[fieldMap.title] || "Unnamed Item";
                                                 const image = formatImageUrl(row[fieldMap.image]);
@@ -620,13 +620,13 @@
                                                             <div className="mt-auto pt-6 border-t border-slate-50 dark:border-slate-700/50 flex items-center justify-between">
                                                                 <div className="flex flex-col gap-2">
                                                                     {phone && (
-                                                                        <div className="flex items-center text-[11px] text-slate-600 dark:text-slate-400 font-bold tracking-tight">
+                                                                        <div className="flex items-center text-[12px] text-slate-600 dark:text-slate-400 font-bold tracking-tight">
                                                                             <i className="fas fa-phone-alt mr-2.5 text-emerald-500/50 dark:text-emerald-400/50"></i>
                                                                             {phone}
                                                                         </div>
                                                                     )}
                                                                     {timestamp && (
-                                                                        <div className="flex items-center text-[10px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-wider">
+                                                                        <div className="flex items-center text-[11px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-wider">
                                                                             <i className="far fa-clock mr-2.5"></i>
                                                                             {formatFriendlyDate(timestamp)}
                                                                         </div>
@@ -669,7 +669,7 @@
 
                     <footer className="py-20 bg-white dark:bg-slate-900/50 border-t border-slate-50 dark:border-slate-800/50 mt-12 transition-colors duration-300">
                         <div className="max-w-7xl mx-auto px-4 text-center">
-                            <p className="text-slate-400 dark:text-slate-500 text-[9px] font-bold uppercase tracking-[0.4em] mb-12 opacity-70">Developed and Maintained by <a href="https://www.facebook.com/anik.mondal.819145" className="underline text-slate-700 dark:text-slate-300 hover:text-red-500 transition-colors">Anik Mondal</a> (MBBS 56)</p>
+                            <p className="text-slate-400 dark:text-slate-500 text-[9px] font-bold uppercase tracking-[0.4em] mb-12 opacity-70">Developed and Maintained by <a href="https://www.facebook.com/anik.mondal.819145" className="underline text-slate-700 dark:text-slate-300 hover:text-red-500 transition-colors">Anik Mondal</a> (MBBS 56) & team</p>
                             
                             <div className="flex flex-col items-center gap-14">
                                 <div className="flex flex-wrap justify-center gap-5">
@@ -700,20 +700,20 @@
                                     <div className="flex flex-col items-center gap-10">
                                         <div className="flex items-center justify-center gap-6">
                                             <div className="h-[1px] w-8 bg-slate-100 dark:bg-slate-800"></div>
-                                            <div className="p-3 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-100 shadow-sm">
-                                                <div className="p-[10px] bg-white rounded-[2rem] shadow-sm transition-transform hover:scale-105 border border-slate-50 dark:border-slate-50">
+                                            
+                                                <div className="p-[5px] bg-white rounded-2xl shadow-sm transition-transform hover:scale-105 border border-slate-50 dark:border-slate-50">
                                                     <img 
                                                         src={PROTTASHA_LOGO_URL} 
                                                         alt="Prottasha Logo" 
-                                                        className="h-12 sm:h-14 w-auto object-contain brightness-100 dark:brightness-90 rounded-xl"
+                                                        className="h-14 sm:h-14 w-auto object-contain brightness-100 dark:brightness-90 rounded-xl"
                                                         onError={(e) => { e.target.style.display = 'none'; }}
                                                     />
                                                 </div>
-                                            </div>
+                                            
                                             <div className="h-[1px] w-8 bg-slate-100 dark:bg-slate-800"></div>
                                         </div>
                                         
-                                        <div className="flex items-center gap-4 py-5 px-8 bg-white dark:bg-slate-800/40 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm max-w-[450px] group transition-all duration-300 hover:shadow-lg dark:hover:bg-slate-800/60">
+                                        <div className="flex items-center gap-2 py-5 px-5 bg-white dark:bg-slate-900 rounded-[2rem] max-w-[450px] group transition-all duration-300 hover:scale-105">
                                             <img 
                                                 src={SBMC_LOGO_URL} 
                                                 alt="SBMC Logo" 
@@ -721,7 +721,7 @@
                                                 onError={(e) => { e.target.style.display = 'none'; }}
                                             />
                                             <span className="text-[10px] font-extrabold text-slate-700 dark:text-slate-400 uppercase tracking-[0.2em] text-left leading-relaxed">
-                                                Sher-e-Bangla Medical College, Barishal
+                                                Sher-E-Bangla Medical College, Barishal
                                             </span>
                                         </div>
                                     </div>
